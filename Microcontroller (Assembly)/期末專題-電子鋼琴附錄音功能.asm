@@ -14,7 +14,7 @@
 ;      (3)定義好音名和其PR2值，算式為PWM period=[PR2+1]*4*10^(-6)*16                 ;    
 ;      (4)將Duty Cylce的值設為Period的一半                                           ;
 ;           [1] 經計算過後得知PR2須為CCPR1L:CCP1CON<5:4>的兩倍                        ;
-;            [2]將PR2右移一位(除2)，再丟入CCPR1L中(乘4)，及得到Duty Cylce為Period的一半;
+;           [2]將PR2右移一位(除2)，再丟入CCPR1L中(乘4)，及得到Duty Cylce為Period的一半 ;
 ;  4.按一下SW3，開始錄音-I/O腳位                                                     ;
 ;      (1)事先設定好110個暫存器(ABC000~ABC109)                                       ;
 ;      (2)利用間接定址法(FSR)，將PR2的值丟入RECORD_TEMP暫存器中                       ;
