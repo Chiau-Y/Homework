@@ -1,0 +1,51 @@
+USE property_schema;
+CREATE TABLE Lab (
+    L_No VARCHAR(10) NOT NULL,
+    Name VARCHAR(20) NOT NULL,
+    Property int NOT NULL,
+    PRIMARY KEY (L_No)
+);
+CREATE TABLE Teacher (
+    ID_T VARCHAR(10) NOT NULL,
+    Name VARCHAR(30) NOT NULL,
+    Start_Date VARCHAR(8) NOT NULL,
+    LAB_No VARCHAR(10) NOT NULL,
+    PRIMARY KEY (ID_T),
+    FOREIGN KEY (LAB_No) REFERENCES LAB(L_No)
+);
+CREATE TABLE Student (
+    ID_S VARCHAR(20) NOT NULL,
+    Name VARCHAR(20) NOT NULL,
+    Degree VARCHAR(10) NOT NULL,
+    Salary  int NOT NULL,
+    LAB_No VARCHAR(10) NOT NULL,
+    PRIMARY KEY (ID_S),
+    FOREIGN KEY (LAB_No) REFERENCES LAB(L_No)
+);
+CREATE TABLE Equipment (
+    E_No VARCHAR(10) NOT NULL,
+    Cost int NOT NULL,
+    Buy_Date VARCHAR(8) NOT NULL,
+    LAB_No VARCHAR(10) NOT NULL,
+    PRIMARY KEY (E_No),
+    FOREIGN KEY (LAB_No) REFERENCES LAB(L_No)
+);
+CREATE TABLE MOST_Project (
+    P_No VARCHAR(10) NOT NULL,
+    Start_Date VARCHAR(8) NOT NULL,
+    End_Date VARCHAR(8) NOT NULL,
+    Funding int NOT NULL,
+    PRIMARY KEY (P_No)
+);
+CREATE TABLE Execute (
+    ID_Teacher VARCHAR(10) NOT NULL,
+    ID_Student VARCHAR(20) NOT NULL,
+    Project_No VARCHAR(10) NOT NULL,
+    PRIMARY KEY (ID_Teacher,ID_Student,Project_No)
+);
+CREATE TABLE Accounting_of (
+    ID_Accounting VARCHAR(20) NOT NULL,
+    LAB_No VARCHAR(10) NOT NULL,
+    Acct_Date VARCHAR(8) NOT NULL,
+    PRIMARY KEY (ID_Accounting,LAB_No)
+);

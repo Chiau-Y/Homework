@@ -1,0 +1,5 @@
+INSERT INTO Equipment(E_No, Cost, Buy_Date, LAB_No) VALUES ('E0015','6400', '20200601','L0002')
+DELETE FROM Equipment WHERE E_No = 'E0015'
+SELECT* FROM LAB
+UPDATE Student SET Salary = Salary + 5000 WHERE ID_S IN (SELECT ID_Student FROM Execute, Accounting_of WHERE ID_Student = ID_Accounting)'    
+
